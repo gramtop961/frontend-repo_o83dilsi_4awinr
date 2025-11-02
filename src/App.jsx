@@ -1,28 +1,30 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ParallaxScene from "./components/ParallaxScene";
+import Projects from "./components/Projects";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <div className="min-h-screen bg-black text-white font-['Inter','IBM Plex Sans','Manrope',system-ui]">
+      <Navbar />
+      <Hero />
+      <ParallaxScene />
+      <Projects />
+
+      {/* Footer */}
+      <footer id="contact" className="border-t border-white/10 bg-black py-10">
+        <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white/70 text-sm">© {new Date().getFullYear()} Pixel Peaks — 2D/Pixel Art Portfolio</p>
+          <a
+            href="mailto:hello@pixelpeaks.dev"
+            className="inline-flex items-center rounded-md bg-emerald-500 px-4 py-2 font-semibold shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 transition-colors"
           >
-            Count is {count}
-          </button>
+            hello@pixelpeaks.dev
+          </a>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
